@@ -19,7 +19,7 @@ $username = $_SESSION['username'];
 
   <style>
     * {
-      font-family: Montserrat, sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -27,115 +27,106 @@ $username = $_SESSION['username'];
 
     body {
       display: flex;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
     }
 
     .sidebar {
       width: 250px;
       height: 100vh;
-      background-color: black;
-      color: white;
+      background: rgba(0, 0, 0, 0.9);
       padding: 20px;
       position: fixed;
+      box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .sidebar h3 {
-      padding-top: 30px;
       margin-bottom: 20px;
       padding-left: 20px;
-      font-size: 30px;
+      font-size: 24px;
+      color: #fff;
+      text-align: center;
     }
 
     .sidebar a {
       display: block;
       color: white;
       text-decoration: none;
-      padding-left: 20px;
-      border-radius: 5px;
-      margin-bottom: 20px;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      transition: background 0.3s;
     }
 
     .sidebar a:hover {
-      background-color: gray;
+      background: #667eea;
     }
 
     .main-content {
       margin-left: 270px;
-      padding: 20px;
+      padding: 40px;
       width: 100%;
+      text-align: center;
     }
 
     .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       margin-bottom: 20px;
     }
 
-    .back-btn {
-      font-size: 20px;
-      color: black;
-      text-decoration: none;
-    }
-
-    .card {
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      height: 200px;
-      width: 300px;
-      text-align: center;
-      border-radius: 10px;
-      background-color: transparent;
-      color: black;
-      border: 2px solid black;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      margin: 10px;
-    }
-
-
-    .card:hover {
-      background-color: gray;
-    }
-
-    .card h4 {
-      margin: 0;
-      padding-right: 20px;
-      
-      
+    .header h2 {
+      font-size: 28px;
+      font-weight: 600;
     }
 
     .flex-container {
       display: flex;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 30px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .card {
+      width: 280px;
+      height: 180px;
+      background: white;
+      color: black;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding-top: 50px;
+      text-decoration: none;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card img{
-      width: 100%px;
-      height: 50px;
-      padding-left: 15px;
-      padding-right: 20px;
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.4);
     }
-    .header{
-      padding-top: 100px;
-      justify-content: center;
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .card h4 {
+      font-size: 18px;
+      font-weight: 600;
     }
   </style>
 </head>
 
 <body>
   <div class="sidebar">
-    <h3>Welcome Admin </h3>
+    <h3>Welcome Admin</h3>
     <a href="pendaftaran_barang.php">Daftar Barang</a>
     <a href="pembelian.php">Pembelian</a>
     <a href="riwayat.php">Riwayat</a>
     <a href="register.php">Daftar</a>
     <a href="logout.php">Logout</a>
-    
   </div>
 
   <div class="main-content">
@@ -152,7 +143,7 @@ $username = $_SESSION['username'];
         <h4>Pembelian</h4>
       </a>
       <a href="riwayat.php" class="card">
-      <img src="assets/file (2).png">
+        <img src="assets/file (2).png">
         <h4>Riwayat Pembelian</h4>
       </a>
     </div>
