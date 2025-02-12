@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
 
     // Query untuk mencocokkan username dan password
-    $query = "SELECT * FROM users WHERE username = :username AND password = SHA2(:password, 256)";
+    $query = "SELECT * FROM users WHERE username = :username AND password = :password";
     $stmt = $conn->prepare($query);
     $stmt->bindParam(':username', $username);
     $stmt->bindParam(':password', $password);
