@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Login</title>
     <style>
         * {
-            font-family: Montserrat, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -50,22 +50,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         body {
             display: flex;
             justify-content: center;
-            padding-top: 250px;
-            background-color: #f4f4f4;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
         }
 
         .login-card {
-            width: 600px;
-            padding: 20px;
+            width: 400px;
+            padding: 30px;
             background: white;
-            border-radius: 10px;
-            border: 2px solid black;
-            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .login-card:hover {
+            transform: translateY(-5px);
         }
 
         .login-card h2 {
             margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
         }
 
         .form-group {
@@ -75,15 +82,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         .form-group label {
             display: block;
-            font-weight: bold;
+            font-weight: 600;
             margin-bottom: 5px;
+            color: #555;
         }
 
         .form-group input {
             width: 100%;
-            padding: 8px;
-            border: 1px solid black;
-            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border: 1px solid #667eea;
+            outline: none;
         }
 
         .error-message {
@@ -93,16 +108,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         .login-button {
             width: 100%;
-            padding: 10px;
-            background: black;
+            padding: 12px;
+            background: #667eea;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
+            font-size: 18px;
+            font-weight: 600;
+            transition: background 0.3s ease;
         }
 
         .login-button:hover {
-            background: gray;
+            background: #764ba2;
         }
     </style>
 </head>
@@ -122,6 +140,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <div class="error-message"><?= $error; ?></div>
             <?php endif; ?>
             <button type="submit" class="login-button">Login</button>
+        </form>
+    </div>
+</body>
+</html>
         </form>
     </div>
 </body>
