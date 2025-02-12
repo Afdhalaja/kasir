@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $role = $_POST['role']; // Get role selection
 
     // Hash password
-    $hash_password = hash("sha256", $password);
+    $hash_password =  $password;
 
     try {
         $sql = "INSERT INTO users (username, password, role) VALUES (:username, :password, :role)";
